@@ -2,16 +2,23 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>table Test</title>
+    <title>3D Model Display</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-    <script src="https://cdn.rawgit.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   </head>
-  <body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs='sourceType: webcam;'>
-      <a-marker preset="hiro">
-        <a-entity glb-model="url(assets/models/table.glb)" position="0 0 0" scale="0.5 0.5 0.5"></a-entity>
-      </a-marker>
-      <a-entity camera></a-entity>
+  <body>
+    <a-scene>
+      <!-- 背景の設定 -->
+      <a-sky color="#ECECEC"></a-sky>
+      
+      <!-- GLBモデルを配置 -->
+      <a-entity 
+        gltf-model="url(assets/models/table.glb)" 
+        position="0 1.6 -3" 
+        scale="0.5 0.5 0.5">
+      </a-entity>
+      
+      <!-- カメラの設定 -->
+      <a-entity camera look-controls></a-entity>
     </a-scene>
   </body>
 </html>
